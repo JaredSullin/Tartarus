@@ -23,14 +23,14 @@
         android:id="@+id/Continuing"
         android:layout_width="327dp"
         android:layout_height="64dp"
-        android:text="Continue"
+        android:text="restart"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.836"
-        tools:text="Continue" />
+        tools:text="restart" />
 
     <TextView
         android:id="@+id/title"

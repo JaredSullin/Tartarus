@@ -27,16 +27,14 @@ import weapon.sword_Weapon;
 public class Story {
 
     Main2Activity gs;
-    Main3Activity is;
 
     Player player = new Player();
-    Supermonster monster;
     slime_Monster monster1 = new slime_Monster();
     lizardMan_Monster monster2 = new lizardMan_Monster();
 
     String nextAction1, nextAction2, nextAction3, nextAction4;
-    private static final String FILE_NAME = "/Users/rezrubin/AndroidStudioProjects/Tartarus/app/src/main/java/savedata.dat";
 
+    int restart = MainActivity.restart;
     int bronzering = 0;
     int silverRing= 0;
     int killedPeople = 0;
@@ -54,6 +52,9 @@ public class Story {
             gs.hpNumber.setText("" + player.hp);
             gs.weaponName.setText(player.currentWeapon.name);
 
+            if(restart == 1){
+               gs.newGame();
+            }
     }
 
 
@@ -114,6 +115,8 @@ public class Story {
     }
 
     public void townGate(){
+
+
 
         if(player.currentWeapon.damage > 16){
             gs.mainAreaText.setText("you see a towngate. And guards are standing infront. \n What do you do?");
@@ -692,9 +695,6 @@ public class Story {
             nextAction2 = "";
             nextAction3 = "";
             nextAction4 = "";
-
-            is.invbutton1.setText("");
-            is.invbutton2.setText("potion");
 
         }
     }

@@ -9,6 +9,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    public static int restart = 0;
     Button start, continuing;
 
 
@@ -32,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
         continuing.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
 
+            public void onClick(View v) {
+                MainActivity.restart = 1;
                 continuing(v);
+
             }
         });
     }
@@ -50,4 +54,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(startingScreen);
 
     }
+
+
 }

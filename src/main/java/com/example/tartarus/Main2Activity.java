@@ -11,25 +11,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
+import weapon.fist_Weapon;
+import weapon.knife_Weapon;
+import weapon.rapier_Weapon;
+import weapon.sword_Weapon;
 
 public class Main2Activity extends AppCompatActivity {
 
     MainActivity m3;
     TextView hpNumber, weaponName, mainAreaText;
-    Button action1, action2, action3, action4, inventory;
+    Button action1, action2, action3, action4;
     ImageView storyImage;
 
     Story story = new Story(this);
 
     private final String SHARED_PREFS = "shared preferences";
-    String HP = "text";
+
+    String HP = "Healthpoints";
     String WEAPON = "weapon";
-
-
 
 
     @Override
@@ -37,13 +36,11 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-
         storyImage = findViewById(R.id.storyImage);
         hpNumber = findViewById(R.id.hpNumber);
         weaponName = findViewById(R.id.weapon);
         mainAreaText = findViewById(R.id.mainTextArea);
 
-        inventory = findViewById(R.id.inventoryButton);
 
         action1 = findViewById(R.id.action1);
         action2 = findViewById(R.id.Continuing);
@@ -52,15 +49,10 @@ public class Main2Activity extends AppCompatActivity {
 
 
         story.startup();
+        loadData();
         story.townGate();
 
-        inventory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                goToInventory();
-            }
-        });
 
         action1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,13 +126,6 @@ public class Main2Activity extends AppCompatActivity {
         startActivity(titleScreen);
     }
 
-    public void goToInventory(){
-
-        Intent InventoryScreen = new Intent(this, Main3Activity.class);
-
-        startActivity(InventoryScreen);
-
-    }
 
     public void saveing() {
 
@@ -148,12 +133,12 @@ public class Main2Activity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        editor.putInt(HP, story.player.hp);
+        editor.putString(HP, String.valueOf(story.player.hp));
         editor.putString(WEAPON, story.player.currentWeapon.name);
 
 
+
         editor.apply();
-        editor.commit();
 
         Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show();
     }
@@ -163,12 +148,45 @@ public class Main2Activity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
 
         if (sharedPreferences.contains(HP)) {
-            hpNumber.setText(sharedPreferences.getInt(HP, 15));
+           hpNumber.setText(sharedPreferences.getString(HP, "15"));
+           story.player.hp = Integer.parseInt(hpNumber.getText().toString());
+
+
         }
         if(sharedPreferences.contains(WEAPON)){
-            weaponName.setText(sharedPreferences.getString(WEAPON, ""));
+            weaponName.setText(sharedPreferences.getString(WEAPON, "Fist"));
+            story.player.currentWeapon.name = weaponName.getText().toString();
         }
+
+        if(story.player.currentWeapon.name.equalsIgnoreCase("rapier")){
+            story.player.currentWeapon = new rapier_Weapon();
+            weaponName.setText(story.player.currentWeapon.name);
+        }
+        else if(story.player.currentWeapon.name.equalsIgnoreCase("knife")){
+            story.player.currentWeapon = new knife_Weapon();
+            weaponName.setText(story.player.currentWeapon.name);
+        }
+        else if(story.player.currentWeapon.name.equalsIgnoreCase("sword")){
+            story.player.currentWeapon = new sword_Weapon();
+            weaponName.setText(story.player.currentWeapon.name);
+        }
+        else if(story.player.currentWeapon.name.equalsIgnoreCase("fist")){
+            story.player.currentWeapon = new fist_Weapon();
+            weaponName.setText(story.player.currentWeapon.name);
+        }
+
+
     }
+
+    public void newGame(){
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+
+        sharedPreferences.edit().clear().commit();
+
+
+    }
+
 
 
 }

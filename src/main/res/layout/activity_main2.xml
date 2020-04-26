@@ -138,15 +138,4 @@
         app:layout_constraintVertical_bias="0.132"
         app:srcCompat="@drawable/slime_liquid_monster_vector_illustration_260nw_1191848812" />
 
-    <Button
-        android:id="@+id/inventoryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="inventory"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
