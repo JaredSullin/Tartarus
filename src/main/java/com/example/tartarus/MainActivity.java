@@ -1,5 +1,7 @@
 package com.example.tartarus;
 
+// importing all needed imports
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,15 +9,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ *   description:  starting screen of the app
+ *  param @: nothing
+ */
+
 public class MainActivity extends AppCompatActivity {
 
-
+    // a check to see if the person is restarting the game
     public static int restart = 0;
+    // button variable names
     Button start, continuing;
 
-
-
-    Main2Activity gs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,19 +42,27 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 MainActivity.restart = 1;
-                continuing(v);
+                restart(v);
 
             }
         });
     }
 
+    /**
+     * description: brings user to the game screen
+     * @param view
+     */
     public void start(View view){
         Intent startingScreen = new Intent(this, Main2Activity.class);
         startActivity(startingScreen);
 
     }
 
-    public void continuing(View view){
+    /**
+     * description restarts save data and brings you to game screen
+     * @param view
+     */
+    public void restart(View view){
         Intent startingScreen = new Intent(this, Main2Activity.class);
         startActivity(startingScreen);
 

@@ -1,49 +1,49 @@
 package com.example.tartarus;
 
-import android.app.Application;
-import android.content.SharedPreferences;
-import android.os.Environment;
-import android.view.View;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.stream.Stream;
+// importing all needed imports
 
 import monster.lizardMan_Monster;
 import weapon.fist_Weapon;
 import weapon.knife_Weapon;
-import weapon.fist_Weapon;
-import monster.Supermonster;
 import monster.slime_Monster;
 import weapon.rapier_Weapon;
 import weapon.sword_Weapon;
 
+/**
+ *  description: this class progresses the story and sets up methods for every room in the game and the battle mechanic
+ */
 public class Story {
 
     Main2Activity gs;
 
+    // creates new player for the story
     Player player = new Player();
+    //creates monsters for the player to beat
     slime_Monster monster1 = new slime_Monster();
     lizardMan_Monster monster2 = new lizardMan_Monster();
 
+    // button story directonals <tells what room in the story you next will go to>
     String nextAction1, nextAction2, nextAction3, nextAction4;
 
+    // checks if you clicked restart in the title screen of the app
     int restart = MainActivity.restart;
+
+    // story based conditonal ints
     int bronzering = 0;
     int silverRing= 0;
     int killedPeople = 0;
 
+    /**
+     * decription: constructor
+     * @param gs
+     */
     public Story(Main2Activity gs){
         this.gs = gs;
     }
 
-
+    /**
+     * description: sets player stats and checks if you wanted to restart your game
+     */
 
     public void startup(){
 
@@ -58,6 +58,10 @@ public class Story {
     }
 
 
+    /**
+     * description: switch statment to use the next method & set up what room you can go to next
+     * @param nextEvent
+     */
     public void possibleEvent(String nextEvent){
 
         switch(nextEvent){
@@ -94,10 +98,11 @@ public class Story {
 
 
 
-
-
         }
     }
+
+    // all lines after this are method dictating the text that will be presented in the game screen in main activity 2.java
+    // some go and set player values depending on the room and what happens in it
 
     public void drunkenCorpse() {
 
