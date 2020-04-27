@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import weapon.fist_Weapon;
+import weapon.holySword_Weapon;
 import weapon.knife_Weapon;
 import weapon.rapier_Weapon;
 import weapon.sword_Weapon;
@@ -43,6 +44,10 @@ public class Main2Activity extends AppCompatActivity {
     // need a shared prefrence extra varible name for saving data
     String HP = "Healthpoints";
     String WEAPON = "weapon";
+    String bRing = "bronzeRing";
+    String sRing = "sliverRing";
+    String murders = "killedPeople";
+
 
 
     @Override
@@ -181,8 +186,10 @@ public class Main2Activity extends AppCompatActivity {
 
         editor.putString(HP, String.valueOf(story.player.hp));
         editor.putString(WEAPON, story.player.currentWeapon.name);
-
-
+        editor.putString(bRing, String.valueOf(story.bronzering));
+        editor.putString(sRing, String.valueOf(story.silverRing) );
+        editor.putString(sRing, String.valueOf(story.silverRing) );
+        editor.putString(murders, String.valueOf(story.killedPeople));
 
         editor.apply();
 
@@ -196,31 +203,50 @@ public class Main2Activity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
 
+        // checks shared prefrences for saved strings and sets text
         if (sharedPreferences.contains(HP)) {
            hpNumber.setText(sharedPreferences.getString(HP, "15"));
            story.player.hp = Integer.parseInt(hpNumber.getText().toString());
-
-
         }
         if(sharedPreferences.contains(WEAPON)){
             weaponName.setText(sharedPreferences.getString(WEAPON, "Fist"));
             story.player.currentWeapon.name = weaponName.getText().toString();
         }
+        if(sharedPreferences.contains(sRing)){
+            story.silverRing = Integer.parseInt(sharedPreferences.getString(sRing, "0"));
+        }
+        if(sharedPreferences.contains(bRing)){
+            story.bronzering = Integer.parseInt(sharedPreferences.getString(bRing, "0"));
+        }
+        if (sharedPreferences.contains(murders)){
+            story.killedPeople =  Integer.parseInt(sharedPreferences.getString(murders, "0"));
+        }
 
+
+
+        // sets player wepon depending on what was saved in prefrences because above only sets the weapon name not damage too
         if(story.player.currentWeapon.name.equalsIgnoreCase("rapier")){
             story.player.currentWeapon = new rapier_Weapon();
             weaponName.setText(story.player.currentWeapon.name);
         }
+
         else if(story.player.currentWeapon.name.equalsIgnoreCase("knife")){
             story.player.currentWeapon = new knife_Weapon();
             weaponName.setText(story.player.currentWeapon.name);
         }
+
         else if(story.player.currentWeapon.name.equalsIgnoreCase("sword")){
             story.player.currentWeapon = new sword_Weapon();
             weaponName.setText(story.player.currentWeapon.name);
         }
+
         else if(story.player.currentWeapon.name.equalsIgnoreCase("fist")){
             story.player.currentWeapon = new fist_Weapon();
+            weaponName.setText(story.player.currentWeapon.name);
+        }
+
+        else if(story.player.currentWeapon.name.equalsIgnoreCase("Holy Sword")){
+            story.player.currentWeapon = new holySword_Weapon();
             weaponName.setText(story.player.currentWeapon.name);
         }
 

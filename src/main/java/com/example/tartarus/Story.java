@@ -4,6 +4,7 @@ package com.example.tartarus;
 
 import monster.lizardMan_Monster;
 import weapon.fist_Weapon;
+import weapon.holySword_Weapon;
 import weapon.knife_Weapon;
 import monster.slime_Monster;
 import weapon.rapier_Weapon;
@@ -64,6 +65,7 @@ public class Story {
      */
     public void possibleEvent(String nextEvent){
 
+
         switch(nextEvent){
 
             case "townGate": townGate(); break;
@@ -95,6 +97,19 @@ public class Story {
             case "fightTwo": fightTwo(); break;
             case "chestThree": chestThree(); break;
             case "skeleton": skeleton(); break;
+            case "courtYard": courtYard(); break;
+            case "helpman": helpman(); break;
+            case "watchman": watchman(); break;
+            case "alley": alley(); break;
+            case "roadToCastle": roadToCastle(); break;
+            case "castleGate": castleGate(); break;
+            case "throneRoom": throneRoom(); break;
+            case "endingOne": endingOne();  break;
+            case "endingTwo": endingTwo();  break;
+            case "endingThree": endingThree(); break;
+            case "endingFour": endingFour(); break;
+            case "newgame": gs.goToTitle(); break;
+
 
 
 
@@ -202,6 +217,266 @@ public class Story {
 
 
     }
+
+    public void courtYard(){
+
+        if(player.hp <= 0){
+
+            lose();
+
+        }
+
+        gs.mainAreaText.setText("you walk though the town gate and see a fountain, \n  alley to the west and some houses to the east.\n\n What do you do?");
+
+        gs.action1.setText("Go north");
+        gs.action2.setText("Go south");
+        gs.action3.setText("Go west");
+        gs.action4.setText("");
+
+        nextAction1 = "roadToCastle";
+        nextAction2 = "townGate";
+        nextAction3 = "alley";
+        nextAction4 = "";
+
+
+
+    }
+
+    public void roadToCastle(){
+
+        gs.mainAreaText.setText("You are on a road and a huge castle is in the distance. \n\n What do you do.");
+        gs.action1.setText("Go north");
+        gs.action2.setText("Go south");
+        gs.action3.setText("");
+        gs.action4.setText("");
+
+        nextAction1 = "castleGate";
+        nextAction2 = "courtYard";
+        nextAction3 = "";
+        nextAction4 = "";
+
+
+    }
+
+    public void castleGate(){
+
+        gs.mainAreaText.setText("You are at the castle gate. The\n guards say you have defeated the mosters plaguing \n the land. You may meet the king.\n What do you do.");
+        gs.action1.setText("Go north");
+        gs.action2.setText("Go south");
+        gs.action3.setText("");
+        gs.action4.setText("");
+
+        nextAction1 = "throneRoom";
+        nextAction2 = "roadToCastle";
+        nextAction3 = "";
+        nextAction4 = "";
+    }
+
+    public void throneRoom(){
+        if(killedPeople == 0){
+            // best ending
+
+            gs.mainAreaText.setText("King: You are the righteous hero we needed\n thankyou for all your service\n You are a true hero");
+            gs.action1.setText(">");
+            gs.action2.setText("");
+            gs.action3.setText("");
+            gs.action4.setText("");
+
+            nextAction1 = "endingOne";
+            nextAction2 = "";
+            nextAction3 = "";
+            nextAction4 = "";
+
+        }
+        else if(killedPeople ==1){
+            // bad endng
+
+            gs.mainAreaText.setText("King: You are the not hero we needed\n thank you for all your service but...\n ... you have killed some one");
+            gs.action1.setText(">");
+            gs.action2.setText("");
+            gs.action3.setText("");
+            gs.action4.setText("");
+
+            nextAction1 = "endingTwo";
+            nextAction2 = "";
+            nextAction3 = "";
+            nextAction4 = "";
+        }
+        else if (killedPeople == 2){
+            // so so ending
+
+            gs.mainAreaText.setText("King: You are the hero we needed\n thankyou for all your service\n You are a hero ");
+            gs.action1.setText(">");
+            gs.action2.setText("");
+            gs.action3.setText("");
+            gs.action4.setText("");
+
+            nextAction1 = "endingThree";
+            nextAction2 = "";
+            nextAction3 = "";
+            nextAction4 = "";
+
+        }
+        else if(killedPeople == 3){
+            //ok ending
+
+            gs.mainAreaText.setText("King: You are the not hero we needed\n thank you for all your service but...\n ... you have killed too many ...");
+            gs.action1.setText(">");
+            gs.action2.setText("");
+            gs.action3.setText("");
+            gs.action4.setText("");
+
+            nextAction1 = "endingFour";
+            nextAction2 = "";
+            nextAction3 = "";
+            nextAction4 = "";
+        }
+    }
+
+    public void endingFour(){
+
+        gs.mainAreaText.setText("Game over\n\n you win \n life is precious");
+        gs.action1.setText(">");
+        gs.action2.setText("");
+        gs.action3.setText("");
+        gs.action4.setText("");
+
+        nextAction1 = "newgame";
+        nextAction2 = "";
+        nextAction3 = "";
+        nextAction4 = "";
+
+    }
+
+
+    public void endingThree(){
+
+        gs.mainAreaText.setText("Game over\n\n you win");
+        gs.action1.setText(">");
+        gs.action2.setText("");
+        gs.action3.setText("");
+        gs.action4.setText("");
+
+        nextAction1 = "newgame";
+        nextAction2 = "";
+        nextAction3 = "";
+        nextAction4 = "";
+
+    }
+
+    public void endingTwo(){
+
+        gs.mainAreaText.setText("Game over\n\n you win \n but at what cost ...");
+        gs.action1.setText(">");
+        gs.action2.setText("");
+        gs.action3.setText("");
+        gs.action4.setText("");
+
+        nextAction1 = "newgame";
+        nextAction2 = "";
+        nextAction3 = "";
+        nextAction4 = "";
+
+    }
+
+    public void endingOne(){
+
+        gs.mainAreaText.setText("Game over\n\n you win");
+        gs.action1.setText(">");
+        gs.action2.setText("");
+        gs.action3.setText("");
+        gs.action4.setText("");
+
+        nextAction1 = "newgame";
+        nextAction2 = "";
+        nextAction3 = "";
+        nextAction4 = "";
+
+
+
+    }
+
+
+    public void alley(){
+
+        if(!player.currentWeapon.name.equals("Holy Sword")){
+
+            gs.mainAreaText.setText("you walk into the alley.\n And see a man being beat up\n he is close to death \n What do you do?");
+
+            gs.action1.setText("watch");
+            gs.action2.setText("help");
+            gs.action3.setText("");
+            gs.action4.setText("");
+
+            nextAction1 = "watchman";
+            nextAction2 = "helpman";
+            nextAction3 = "";
+            nextAction4 = "";
+
+        }
+        else{
+
+            gs.mainAreaText.setText("you walk into the alley.\n And see dead bodies\n\n What do you do?");
+
+            gs.action1.setText("Go back");
+            gs.action2.setText("");
+            gs.action3.setText("");
+            gs.action4.setText("");
+
+            nextAction1 = "courtYard";
+            nextAction2 = "";
+            nextAction3 = "";
+            nextAction4 = "";
+
+        }
+
+
+    }
+
+    public void watchman(){
+
+        killedPeople = killedPeople + 1;
+
+        gs.mainAreaText.setText("you watch the man die in the alley.\n\n What do you do?");
+
+        gs.action1.setText("Go back");
+        gs.action2.setText("");
+        gs.action3.setText("");
+        gs.action4.setText("");
+
+        nextAction1 = "courtYard";
+        nextAction2 = "";
+        nextAction3 = "";
+        nextAction4 = "";
+
+    }
+
+    public void helpman(){
+
+        killedPeople = killedPeople + 2;
+
+        player.hp = player.hp - 10;
+        gs.hpNumber.setText("" + player.hp);
+
+        player.currentWeapon = new holySword_Weapon();
+        gs.weaponName.setText(player.currentWeapon.name);
+
+        gs.mainAreaText.setText("you helped the man and fought and killed the men easily and heal him\n beating him in the alley he gives you a sword \n  (You lose 10 hp.) \n (You obtain a Holy Sword.)");
+
+        gs.action1.setText("Go back");
+        gs.action2.setText("");
+        gs.action3.setText("");
+        gs.action4.setText("");
+
+        nextAction1 = "courtYard";
+        nextAction2 = "";
+        nextAction3 = "";
+        nextAction4 = "";
+
+
+    }
+
+
 
     public void guardTalk(){
 
@@ -318,13 +593,12 @@ public class Story {
             gs.weaponName.setText(player.currentWeapon.name);
 
             gs.action1.setText("Go north");
-            gs.action2.setText("Go east");
-            gs.action3.setText("Go south");
-            gs.action4.setText("Go west");
+            gs.action2.setText("");
+            gs.action3.setText("");
+            gs.action4.setText("");
 
             nextAction1 = "longHallway2";
             nextAction2 = "";
-
             nextAction3 = "";
             nextAction4 = "";
         }
@@ -332,9 +606,9 @@ public class Story {
             gs.mainAreaText.setText("You see a room with a empty chest in it.\n\n What do you do? ");
 
             gs.action1.setText("Go north");
-            gs.action2.setText("Go east");
-            gs.action3.setText("Go south");
-            gs.action4.setText("Go west");
+            gs.action2.setText("");
+            gs.action3.setText("");
+            gs.action4.setText("");
 
             nextAction1 = "longHallway2";
             nextAction2 = "";
@@ -420,13 +694,13 @@ public class Story {
 
         gs.mainAreaText.setText("You turn the corner to spot a empty room.\n You see nothing but darkness and dripping.");
         gs.action1.setText("Go north");
-        gs.action2.setText("Go east");
-        gs.action3.setText("Go south");
-        gs.action4.setText("Go west");
+        gs.action2.setText("Go south");
+        gs.action3.setText("");
+        gs.action4.setText("");
 
         nextAction1 = "chestTwo";
-        nextAction2 = "";
-        nextAction3 = "longHallway2";
+        nextAction2 = "longHallway2";
+        nextAction3 = "";
         nextAction4 = "";
 
     }
@@ -435,13 +709,13 @@ public class Story {
 
         gs.mainAreaText.setText("You turn the corner to spot a empty room.\n You see nothing but darkness and dripping.");
         gs.action1.setText("Go north");
-        gs.action2.setText("Go east");
-        gs.action3.setText("Go south");
-        gs.action4.setText("Go west");
+        gs.action2.setText("Go south");
+        gs.action3.setText("");
+        gs.action4.setText("");
 
         nextAction1 = "naturalSpring";
-        nextAction2 = "";
-        nextAction3 = "secondEncounter";
+        nextAction2 = "secondEncounter";
+        nextAction3 = "";
         nextAction4 = "";
 
     }
@@ -538,6 +812,12 @@ public class Story {
         nextAction3 = "";
         nextAction4 = "";
 
+        if(player.hp <= 0){
+
+            lose();
+
+        }
+
     }
 
     public void drunkenEncounter2(){
@@ -557,6 +837,12 @@ public class Story {
         nextAction2 = "";
         nextAction3 = "";
         nextAction4 = "";
+
+        if(player.hp <= 0){
+
+            lose();
+
+        }
 
     }
 
@@ -687,7 +973,7 @@ public class Story {
 
 
         } else {
-            gs.mainAreaText.setText("You defeated the slime! The monster droped a ring and a 2x potion!\n(You obtained a Bronze Ring!)\n (You obtained a potion!)");
+            gs.mainAreaText.setText("You defeated the slime! The monster droped a ring!\n\n(You obtained a Bronze Ring!)");
 
             bronzering = 1;
 
@@ -725,7 +1011,9 @@ public class Story {
     public void toTitle(){
         gs.goToTitle();
     }
-    // probelm
+
+
+    // turn based fighting
     public void secondEncounter() {
         if (silverRing == 1) {
 
@@ -863,6 +1151,8 @@ public class Story {
 
         }
     }
+
+
 
 
 
