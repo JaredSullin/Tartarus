@@ -121,7 +121,7 @@ public class Story {
 
     public void drunkenCorpse() {
 
-        gs.storyImage.setImageResource(R.drawable.Untitled_Artwork);
+        gs.storyImage.setImageResource(R.mipmap.deadbodyout);
 
         gs.mainAreaText.setText("you see the outline of drunken man you killed. And you throw up a little. \n And then turn back from where you came");
 
@@ -153,7 +153,7 @@ public class Story {
             nextAction3 = "oldWoman";
             nextAction4 = "forkInTheRoad";
 
-           gs.storyImage.setImageResource(R.drawable.towngate);
+           gs.storyImage.setImageResource(R.mipmap.towngate);
 
 
 
@@ -172,7 +172,7 @@ public class Story {
             nextAction3 = "oldWoman";
             nextAction4 = "forkInTheRoad";
 
-            gs.storyImage.setImageResource(R.drawable.towngate);
+            gs.storyImage.setImageResource(R.mipmap.towngate);
 
 
         }
@@ -181,7 +181,7 @@ public class Story {
 
     public void oldWoman(){
 
-        gs.storyImage.setImageResource(R.drawable.SaveWoman_);
+        gs.storyImage.setImageResource(R.mipmap.savewoman);
 
         gs.saveing();
 
@@ -204,7 +204,7 @@ public class Story {
 
     public void courtYard(){
 
-        gs.storyImage.setImageResource(R.drawable.Courtyard);
+        gs.storyImage.setImageResource(R.mipmap.courtyard);
 
         if(player.hp <= 0){
 
@@ -230,7 +230,7 @@ public class Story {
 
     public void roadToCastle(){
 
-        gs.storyImage.setImageResource(R.drawable.roadtocastle);
+        gs.storyImage.setImageResource(R.mipmap.roadtocastle);
 
         gs.mainAreaText.setText("You are on a road and a huge castle is in the distance. \n\n What do you do.");
         gs.action1.setText("Go north");
@@ -248,7 +248,7 @@ public class Story {
 
     public void castleGate(){
 
-        gs.storyImage.setImageResource(R.drawable.Castle_gate);
+        gs.storyImage.setImageResource(R.mipmap.castlegate);
 
         gs.mainAreaText.setText("You are at the castle gate. The\n You though the gate.\n\n What do you do.");
         gs.action1.setText("Go north");
@@ -268,7 +268,7 @@ public class Story {
 
         if(killedPeople == 0){
 
-            gs.storyImage.setImageResource(R.drawable.goodending);
+            gs.storyImage.setImageResource(R.mipmap.goodending);
             // best ending
 
             gs.mainAreaText.setText("King: You are the righteous hero we needed\n thankyou for all your service\n You are a true hero");
@@ -285,7 +285,7 @@ public class Story {
         }
         else if(killedPeople ==1){
 
-            gs.storyImage.setImageResource(R.drawable.badending);
+            gs.storyImage.setImageResource(R.mipmap.badending);
             // bad endng
 
             gs.mainAreaText.setText("King: You are the not hero we needed\n thank you for all your service but...\n ... you have killed some one");
@@ -301,7 +301,7 @@ public class Story {
         }
         else if (killedPeople == 2){
 
-            gs.storyImage.setImageResource(R.drawable.okending);
+            gs.storyImage.setImageResource(R.mipmap.okending);
             // so so ending
 
             gs.mainAreaText.setText("King: You are the hero we needed\n thankyou for all your service\n You are a hero ");
@@ -318,7 +318,7 @@ public class Story {
         }
         else if(killedPeople == 3){
 
-            gs.storyImage.setImageResource(R.drawable.okending);
+            gs.storyImage.setImageResource(R.mipmap.okending);
             //ok ending
 
             gs.mainAreaText.setText("King: You are the not hero we needed\n thank you for all your service but...\n ... you have killed too many ...");
@@ -336,9 +336,9 @@ public class Story {
 
     public void endingFour(){
 
-        gs.storyImage.setImageResource(R.drawable.gameover);
+        gs.storyImage.setImageResource(R.mipmap.gameover);
 
-        gs.mainAreaText.setText("Game over\n\n you win \n life is precious");
+        gs.mainAreaText.setText(" you win \n life is precious");
         gs.action1.setText(">");
         gs.action2.setText("");
         gs.action3.setText("");
@@ -353,9 +353,9 @@ public class Story {
 
     public void endingThree(){
 
-        gs.storyImage.setImageResource(R.drawable.gameover);
+        gs.storyImage.setImageResource(R.mipmap.gameover);
 
-        gs.mainAreaText.setText("Game over\n\n you win");
+        gs.mainAreaText.setText("you win");
         gs.action1.setText(">");
         gs.action2.setText("");
         gs.action3.setText("");
@@ -370,10 +370,10 @@ public class Story {
 
     public void endingTwo(){
 
-        gs.storyImage.setImageResource(R.drawable.gameover);
+        gs.storyImage.setImageResource(R.mipmap.gameover);
 
 
-        gs.mainAreaText.setText("Game over\n\n you win \n but at what cost ...");
+        gs.mainAreaText.setText("you win \n but at what cost ...");
         gs.action1.setText(">");
         gs.action2.setText("");
         gs.action3.setText("");
@@ -388,10 +388,10 @@ public class Story {
 
     public void endingOne(){
 
-        gs.storyImage.setImageResource(R.drawable.gameover);
+        gs.storyImage.setImageResource(R.mipmap.gameover);
 
 
-        gs.mainAreaText.setText("Game over\n\n you win");
+        gs.mainAreaText.setText("you win");
         gs.action1.setText(">");
         gs.action2.setText("");
         gs.action3.setText("");
@@ -411,7 +411,7 @@ public class Story {
 
         if(!player.currentWeapon.name.equals("Holy Sword")){
 
-            gs.storyImage.setImageResource(R.drawable.Alley);
+            gs.storyImage.setImageResource(R.mipmap.alley);
 
 
             gs.mainAreaText.setText("you walk into the alley.\n And see a man being beat up\n he is close to death \n What do you do?");
@@ -429,7 +429,7 @@ public class Story {
         }
         else{
 
-            gs.storyImage.setImageResource(R.drawable.alleyhelpwatch);
+            gs.storyImage.setImageResource(R.mipmap.alleyhelpwatch);
 
 
             gs.mainAreaText.setText("you walk into the alley.\n And see a pool of blood. \n\n What do you do?");
@@ -451,7 +451,7 @@ public class Story {
 
     public void watchman(){
 
-        gs.storyImage.setImageResource(R.drawable.alleyhelpwatch);
+        gs.storyImage.setImageResource(R.mipmap.alleyhelpwatch);
 
         killedPeople = killedPeople + 1;
 
@@ -471,7 +471,7 @@ public class Story {
 
     public void helpman(){
 
-        gs.storyImage.setImageResource(R.drawable.alleyhelpwatch);
+        gs.storyImage.setImageResource(R.mipmap.alleyhelpwatch);
 
 
         killedPeople = killedPeople + 2;
@@ -504,7 +504,7 @@ public class Story {
 
         if (bronzering == 1 && silverRing ==1){
 
-            gs.storyImage.setImageResource(R.drawable.Talkguard);
+            gs.storyImage.setImageResource(R.mipmap.talkguard);
 
 
             gs.mainAreaText.setText("you walk up to the town gate.\n And the guards say thanks for helping with that monster. \n Welcome to town. \n What do you do?");
@@ -522,7 +522,7 @@ public class Story {
         }
         else if(silverRing == 0) {
 
-            gs.storyImage.setImageResource(R.drawable.Talkguard);
+            gs.storyImage.setImageResource(R.mipmap.talkguard);
 
             gs.mainAreaText.setText("you walk up to the town gate.\n And guards are stopping you from moving foward. \n What do you do?");
 
@@ -542,7 +542,7 @@ public class Story {
 
     public void crossRoad() {
 
-        gs.storyImage.setImageResource(R.drawable.crossroad);
+        gs.storyImage.setImageResource(R.mipmap.crossroad);
 
 
         gs.mainAreaText.setText("You are at a crossroad in a labyrinth.\n If you go south, you will go back to the town.\n\n What do you do.");
@@ -562,7 +562,7 @@ public class Story {
 
     public void longHallway(){
 
-        gs.storyImage.setImageResource(R.drawable.longHallway);
+        gs.storyImage.setImageResource(R.mipmap.longhallway);
 
 
         gs.mainAreaText.setText("You are are in a long dark hallway.\n If you go eest, you will go back to the crossroad.\n\n What do you do.");
@@ -580,7 +580,7 @@ public class Story {
 
     public void longHallway2(){
 
-        gs.storyImage.setImageResource(R.drawable.longHallway);
+        gs.storyImage.setImageResource(R.mipmap.longhallway);
 
 
         gs.mainAreaText.setText("You are deep in a hallway in the labyrinth.\n If you go west, you will go back near the the beginning of the hallway.\n\n What do you do.");
@@ -598,7 +598,7 @@ public class Story {
 
     public void oracle(){
 
-        gs.storyImage.setImageResource(R.drawable.Oracle);
+        gs.storyImage.setImageResource(R.mipmap.oracle);
 
 
         gs.mainAreaText.setText("You see a strangely white eyed man in a bush and he says come ... come....\n he says you shall destroy the thing that has been hurting the people of the labyrinth \n What do you do.");
@@ -626,7 +626,7 @@ public class Story {
 
         if(player.currentWeapon.name.equals("Fist")){
 
-            gs.storyImage.setImageResource(R.drawable.Open_chest);
+            gs.storyImage.setImageResource(R.mipmap.openchest);
 
             gs.mainAreaText.setText("You see a room with a chest in a room and you walk foward and open it.\n (You obtain a knife.)");
 
@@ -645,7 +645,7 @@ public class Story {
         }
         else{
 
-            gs.storyImage.setImageResource(R.drawable.Open_chest);
+            gs.storyImage.setImageResource(R.mipmap.openchest);
 
 
             gs.mainAreaText.setText("You see a room with a empty chest in it.\n\n What do you do? ");
@@ -666,7 +666,7 @@ public class Story {
 
     public void chestTwo(){
 
-        gs.storyImage.setImageResource(R.drawable.Open_chest);
+        gs.storyImage.setImageResource(R.mipmap.openchest);
 
 
         if(player.currentWeapon.name.equals("Fist") || player.currentWeapon.name.equals("Knife")){
@@ -704,7 +704,7 @@ public class Story {
 
     public void chestThree(){
 
-        gs.storyImage.setImageResource(R.drawable.Open_chest);
+        gs.storyImage.setImageResource(R.mipmap.openchest);
 
 
         if(player.currentWeapon.name.equals("Fist") || player.currentWeapon.name.equals("Knife") || player.currentWeapon.name.equals("Sword")){
@@ -743,7 +743,7 @@ public class Story {
 
     public void emptyRoom1(){
 
-        gs.storyImage.setImageResource(R.drawable.Empty_room);
+        gs.storyImage.setImageResource(R.mipmap.emptyroom);
 
 
         gs.mainAreaText.setText("You turn the corner to spot a empty room.\n You see nothing but darkness and dripping.");
@@ -761,7 +761,7 @@ public class Story {
 
     public void emptyRoom2(){
 
-        gs.storyImage.setImageResource(R.drawable.Empty_room);
+        gs.storyImage.setImageResource(R.mipmap.emptyroom);
 
 
         gs.mainAreaText.setText("You turn the corner to spot a empty room.\n You see nothing but darkness and dripping.");
@@ -779,7 +779,7 @@ public class Story {
 
     public void naturalSpring(){
 
-        gs.storyImage.setImageResource(R.drawable.oasis);
+        gs.storyImage.setImageResource(R.mipmap.oasis);
 
 
         if(player.hp < 100){
@@ -821,7 +821,7 @@ public class Story {
 
         if(player.hp < 100) {
 
-            gs.storyImage.setImageResource(R.drawable.);
+           gs.storyImage.setImageResource(R.mipmap.skeletonherb);
 
             gs.mainAreaText.setText("You see a skeleton and a heart shape herb in his hand.\n You take the herb and eat it and heal \n\n (You gain 5 hp.)");
 
@@ -840,7 +840,7 @@ public class Story {
         }
         else{
 
-            gs.storyImage.setImageResource(R.drawable);
+            gs.storyImage.setImageResource(R.mipmap.skeletonnoherbl);
 
             gs.mainAreaText.setText("You see a skeleton and where you plucked all those herbs out.\n\n What do you do?");
 
@@ -858,7 +858,7 @@ public class Story {
 
     public void drunkenEncounter(){
 
-        gs.storyImage.setImageResource(R.drawable.drunkencounter);
+        gs.storyImage.setImageResource(R.mipmap.drunkencounter);
 
 
         // player current hp
@@ -890,7 +890,7 @@ public class Story {
 
     public void drunkenEncounter2(){
 
-        gs.storyImage.setImageResource(R.drawable.Drunk_and);
+        gs.storyImage.setImageResource(R.mipmap.drunkand);
 
 
         gs.mainAreaText.setText("You walk up to drunken man.\n the drunken man hits you with a rusty club.\n You hit him with all your might and kill him. \n (You lose 5 hp.)");
@@ -920,7 +920,7 @@ public class Story {
     public void firstEncounter() {
         if (bronzering == 1) {
 
-            gs.storyImage.setImageResource(R.drawable.Empty_room);
+            gs.storyImage.setImageResource(R.mipmap.emptyroom);
 
 
             gs.mainAreaText.setText("This is where you defeated the slime.\n\n What do you do");
@@ -939,7 +939,7 @@ public class Story {
         }
         else {
 
-            gs.storyImage.setImageResource(R.drawable.Slime);
+            gs.storyImage.setImageResource(R.mipmap.slime);
 
 
             gs.mainAreaText.setText("You encounter a " + monster1.name + "!");
@@ -958,7 +958,7 @@ public class Story {
 
     public void fightOne(){
 
-        gs.storyImage.setImageResource(R.drawable.Slime);
+        gs.storyImage.setImageResource(R.mipmap.slime);
 
 
         gs.mainAreaText.setText(monster1.name + ": " + monster1.hp + "\n\n What do you do?");
@@ -977,7 +977,7 @@ public class Story {
     public void playerAttack1() {
 
         // sets image
-        gs.storyImage.setImageResource(R.drawable.Slime);
+        gs.storyImage.setImageResource(R.mipmap.slime);
 
         int playerDamage = new java.util.Random().nextInt(player.currentWeapon.damage);
 
@@ -1006,7 +1006,7 @@ public class Story {
 
     public void monsterAttack1() {
 
-        gs.storyImage.setImageResource(R.drawable.Slime);
+        gs.storyImage.setImageResource(R.mipmap.slime);
 
 
         int monsterDamage = new java.util.Random().nextInt(monster1.attack);
@@ -1043,7 +1043,7 @@ public class Story {
 
         if (bronzering == 1) {
 
-            gs.storyImage.setImageResource(R.drawable.Empty_room);
+            gs.storyImage.setImageResource(R.mipmap.emptyroom);
 
 
             gs.mainAreaText.setText("This is where you defeated the " + monster1.name + "." + "\n\n What do you do");
@@ -1061,7 +1061,7 @@ public class Story {
 
         } else {
 
-            gs.storyImage.setImageResource(R.drawable.Bronze_ring);
+            gs.storyImage.setImageResource(R.mipmap.bronzering);
 
             gs.mainAreaText.setText("You defeated the slime! The monster droped a ring!\n\n(You obtained a Bronze Ring!)");
 
@@ -1082,7 +1082,7 @@ public class Story {
 
     public void lose() {
 
-        gs.storyImage.setImageResource(R.drawable.gameover);
+        gs.storyImage.setImageResource(R.mipmap.gameover);
 
 
         gs.mainAreaText.setText("You are dead!\n\nGAME OVER");
@@ -1110,7 +1110,7 @@ public class Story {
     public void secondEncounter() {
         if (silverRing == 1) {
 
-            gs.storyImage.setImageResource(R.drawable.Empty_room);
+            gs.storyImage.setImageResource(R.mipmap.lizardman);
 
 
             gs.mainAreaText.setText("This is where you defeated the " + monster2.name + ".\n\n What do you do");
@@ -1120,14 +1120,14 @@ public class Story {
             gs.action3.setText("");
             gs.action4.setText("");
 
-            nextAction1 = "";
+            nextAction1 = "emptyRoom2";
             nextAction2 = "";
             nextAction3 = "";
             nextAction4 = "";
         }
         else {
 
-            gs.storyImage.setImageResource(R.drawable.Lizardman);
+            gs.storyImage.setImageResource(R.mipmap.lizardman);
 
 
             gs.mainAreaText.setText("You encounter a " + monster2.name + "!");
@@ -1147,9 +1147,7 @@ public class Story {
 
     public void fightTwo(){
 
-        gs.storyImage.setImageResource(R.drawable.Lizardman);
-
-
+        gs.storyImage.setImageResource(R.mipmap.lizardman);
 
         gs.mainAreaText.setText(monster2.name + ": " + monster2.hp + "\n\n What do you do?");
         gs.action1.setText("Attack");
@@ -1166,9 +1164,7 @@ public class Story {
 
     public void playerAttack2() {
 
-        gs.storyImage.setImageResource(R.drawable.Lizardman);
-
-
+        gs.storyImage.setImageResource(R.mipmap.lizardman);
 
         int playerDamage = new java.util.Random().nextInt(player.currentWeapon.damage);
 
@@ -1197,9 +1193,7 @@ public class Story {
 
     public void monsterAttack2() {
 
-        gs.storyImage.setImageResource(R.drawable.Lizardman);
-
-
+        gs.storyImage.setImageResource(R.mipmap.lizardman);
 
         int monsterDamage = new java.util.Random().nextInt(monster2.attack);
 
@@ -1232,7 +1226,7 @@ public class Story {
 
         if (silverRing == 1) {
 
-            gs.storyImage.setImageResource(R.drawable.Empty_room);
+            gs.storyImage.setImageResource(R.mipmap.emptyroom);
 
             gs.mainAreaText.setText("This is where you defeated the " + monster2.name + "." + "\n\n What do you do");
 
@@ -1249,7 +1243,7 @@ public class Story {
 
         } else {
 
-            gs.storyImage.setImageResource(R.drawable.Silverring_);
+            gs.storyImage.setImageResource(R.mipmap.silverring);
 
             gs.mainAreaText.setText("You defeated the lizard man!\n The monster droped a ring!\n\n(You obtained a Silver Ring!)");
 
