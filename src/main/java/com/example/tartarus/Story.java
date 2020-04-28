@@ -2,6 +2,8 @@ package com.example.tartarus;
 
 // importing all needed imports
 
+import java.util.ArrayList;
+
 import monster.lizardMan_Monster;
 import weapon.fist_Weapon;
 import weapon.holySword_Weapon;
@@ -23,7 +25,10 @@ public class Story {
     slime_Monster monster1 = new slime_Monster();
     lizardMan_Monster monster2 = new lizardMan_Monster();
 
-    // button story directonals <tells what room in the story you next will go to>
+    ArrayList<Integer> killedtotal = new ArrayList<Integer>() ;
+
+
+        // button story directonals <tells what room in the story you next will go to>
     String nextAction1, nextAction2, nextAction3, nextAction4;
 
     // checks if you clicked restart in the title screen of the app
@@ -265,7 +270,6 @@ public class Story {
     public void throneRoom(){
 
 
-
         if(killedPeople == 0){
 
             gs.storyImage.setImageResource(R.mipmap.goodending);
@@ -453,6 +457,8 @@ public class Story {
 
         gs.storyImage.setImageResource(R.mipmap.alleyhelpwatch);
 
+        killedtotal.add(1);
+
         killedPeople = killedPeople + 1;
 
         gs.mainAreaText.setText("you watch the man explode in the alley.\n and the men run away\n What do you do?");
@@ -473,6 +479,7 @@ public class Story {
 
         gs.storyImage.setImageResource(R.mipmap.alleyhelpwatch);
 
+        killedtotal.add(1);
 
         killedPeople = killedPeople + 2;
 
@@ -897,6 +904,9 @@ public class Story {
 
         player.hp = player.hp - 5;
         gs.hpNumber.setText("" + player.hp);
+
+        killedtotal.add(1);
+
         killedPeople =+ 1;
 
         gs.action1.setText(">");
@@ -1261,6 +1271,8 @@ public class Story {
 
         }
     }
+    
+
 
 
 }
