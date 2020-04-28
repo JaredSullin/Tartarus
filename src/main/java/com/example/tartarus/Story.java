@@ -174,26 +174,6 @@ public class Story {
 
 
 
-
-            if(killedPeople > 0){
-
-                gs.mainAreaText.setText("you see a towngate. And guards are standing infront. \n What do you do?");
-
-                gs.action1.setText("Walk up to guard");
-                gs.action2.setText("Drunken corpse");
-                gs.action3.setText("Walk into a place covered with trees");
-                gs.action4.setText("leave townGate");
-
-                nextAction1 = "guardTalk";
-                nextAction2 = "drunkenCorpse";
-                nextAction3 = "oldWoman";
-                nextAction4 = "forkInTheRoad";
-
-                gs.storyImage.setImageResource(R.mipmap.towngate1);
-
-
-
-            }
         }
 
     }
@@ -214,6 +194,7 @@ public class Story {
         nextAction3 = "";
         nextAction4 = "";
 
+        //gs.storyImage.setImageResource(R.drawable.SaveWoman.png);
 
 
     }
@@ -226,7 +207,7 @@ public class Story {
 
         }
 
-        gs.mainAreaText.setText("you walk though the town gate and see a fountain, \n  alley to the west and some houses to the east.\n\n What do you do?");
+        gs.mainAreaText.setText("you walk though the town gate and see a well, \n  alley to the west and some houses to the east.\n\n What do you do?");
 
         gs.action1.setText("Go north");
         gs.action2.setText("Go south");
@@ -260,7 +241,7 @@ public class Story {
 
     public void castleGate(){
 
-        gs.mainAreaText.setText("You are at the castle gate. The\n guards say you have defeated the mosters plaguing \n the land. You may meet the king.\n What do you do.");
+        gs.mainAreaText.setText("You are at the castle gate. The\n You though the gate.\n\n What do you do.");
         gs.action1.setText("Go north");
         gs.action2.setText("Go south");
         gs.action3.setText("");
@@ -416,7 +397,7 @@ public class Story {
         }
         else{
 
-            gs.mainAreaText.setText("you walk into the alley.\n And see dead bodies\n\n What do you do?");
+            gs.mainAreaText.setText("you walk into the alley.\n And see a pool of blood. \n\n What do you do?");
 
             gs.action1.setText("Go back");
             gs.action2.setText("");
@@ -437,7 +418,7 @@ public class Story {
 
         killedPeople = killedPeople + 1;
 
-        gs.mainAreaText.setText("you watch the man die in the alley.\n\n What do you do?");
+        gs.mainAreaText.setText("you watch the man explode in the alley.\n and the men run away\n What do you do?");
 
         gs.action1.setText("Go back");
         gs.action2.setText("");
@@ -461,7 +442,7 @@ public class Story {
         player.currentWeapon = new holySword_Weapon();
         gs.weaponName.setText(player.currentWeapon.name);
 
-        gs.mainAreaText.setText("you helped the man and fought and killed the men easily and heal him\n beating him in the alley he gives you a sword \n  (You lose 10 hp.) \n (You obtain a Holy Sword.)");
+        gs.mainAreaText.setText("you helped and you fought and turn them into a pool of blood easily then you heal  \n the man getting beaten in the alley he gives you a sword and runs away\n  (You lose 10 hp.) \n (You obtain a Holy Sword.)");
 
         gs.action1.setText("Go back");
         gs.action2.setText("");
@@ -565,7 +546,7 @@ public class Story {
 
     public void oracle(){
 
-        gs.mainAreaText.setText("You see a strangely beareded man and he says come ... come....\n he says you shall destroy the thing that has been huring the people of the labyrinth \n What do you do.");
+        gs.mainAreaText.setText("You see a strangely white eyed man in a bush and he says come ... come....\n he says you shall destroy the thing that has been hurting the people of the labyrinth \n What do you do.");
 
         gs.action1.setText("Go Back");
         gs.action2.setText("");
