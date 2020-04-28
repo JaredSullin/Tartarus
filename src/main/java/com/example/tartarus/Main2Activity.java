@@ -259,9 +259,22 @@ public class Main2Activity extends AppCompatActivity {
 
     public void newGame(){
 
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        try{
 
-        sharedPreferences.edit().clear().commit();
+            SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+
+            sharedPreferences.edit().clear().commit();
+
+            Toast.makeText(this, "Data cleared", Toast.LENGTH_SHORT).show();
+
+        }
+        catch (Exception e){
+
+            Toast.makeText(this, "Data not clear", Toast.LENGTH_SHORT).show();
+
+        }
+
+
 
 
     }
